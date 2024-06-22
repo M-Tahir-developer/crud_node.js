@@ -1,0 +1,32 @@
+<%- include('layout/header') %>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <h1>edit use(<%= users._id %>)</user_id></h1>
+        </div>
+        <form action="/update/<%= users._id %>" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Name</label>
+              <input name="name" type="text" value="<%= users.name %>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input  name="email" type="email" value="<%= users.email %>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">phone</label>
+                <input name="phone"type="tel" value="<%= users.phone %>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
+           
+                <div class="input-group">
+                    <input name="image" type="file"  class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                    <img src="<%= users.image %>" alt="">
+                    <input type="hidden" value="<%= users.image %>">
+                </div>
+
+            <button type="submit" class="btn btn-primary" value="update user">Submit</button>
+          </form>
+    </div>
+</div>
+<%- include('layout/footer') %>
